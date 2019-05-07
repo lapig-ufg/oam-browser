@@ -1,4 +1,4 @@
-# src/config/local.js
+## src/config/local.js
 node_modules
 bower_components
 .sass-cache
