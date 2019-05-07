@@ -38,7 +38,7 @@ export default Reflux.createStore({
   //       footprints and scim the latest image from that API request?
   queryLatestImagery: function() {
     api({
-      uri: "/meta?order_by=acquisition_end&sort=desc&limit=10"
+      uri: "/meta?provider=Lapig/UFG&order_by=acquisition_end&sort=desc&limit=10"
     }).then(data => {
       this.storage.latestImagery = data.results;
       this.trigger("latest-imagery");
@@ -58,7 +58,7 @@ export default Reflux.createStore({
   // TODO: Need to watch out here that the API response doesn't become
   //       problematically large.
   queryFootprints: function() {
-    api({ uri: "/meta?limit=99999" }).then(data => {
+    api({ uri: "/meta?provider=Lapig/UFG&limit=99999" }).then(data => {
       var footprintsFeature = this.parseFootprints(data.results);
       var tree = rbush(9);
       tree.load(
@@ -148,7 +148,8 @@ export default Reflux.createStore({
     var params = _.assign(
       {
         limit: 4000,
-        bbox: bbox
+        bbox: bbox,
+        provider: 'Lapig/UFG'
       },
       resolutionFilter,
       dateFilter,
