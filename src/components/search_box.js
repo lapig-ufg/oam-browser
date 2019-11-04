@@ -18,14 +18,14 @@ export default class SearchBox extends React.Component {
   getGeocoderResults = event => {
     event.preventDefault();
     this.setState({
-      geocoderResults: [{ text: "Loading..." }],
+      geocoderResults: [{ text: "Carregando..." }],
       isOpen: true
     });
     utils.queryGeocoder(this.state.value).then(data => {
       if (data.features.length === 0) {
         data.features = [
           {
-            text: "Nothing found"
+            text: "Nada encontrado"
           }
         ];
       }
@@ -67,7 +67,7 @@ export default class SearchBox extends React.Component {
               className: "form__control form__control--medium",
               name: "Geo search",
               id: "global-search__input",
-              placeholder: "Search location or coordinates",
+              placeholder: "Pesquisar localização ou coordenadas",
               type: "search"
             }}
             ref="autocomplete"
@@ -94,7 +94,7 @@ export default class SearchBox extends React.Component {
           <MagnifyIcon className="search-submit" />
           {navigator.geolocation ? (
             <a
-              title="Take me to my location"
+              title="Minha localização"
               className="bttn map-control-location"
               onClick={this.onMyLocationClick}
             >

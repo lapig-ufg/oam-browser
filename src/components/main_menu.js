@@ -3,13 +3,10 @@ import createReactClass from "create-react-class";
 import Reflux from "reflux";
 
 import MenuIcon from "mdi-react/MenuIcon";
-import UploadIcon from "mdi-react/UploadIcon";
 
 import actions from "actions/actions";
 import Dropdown from "oam-design-system/dropdown";
 import userStore from "stores/user_store";
-
-import Status from "components/oam-status";
 
 export default createReactClass({
   displayName: "MainMenu",
@@ -42,29 +39,10 @@ export default createReactClass({
   render: function() {
     return (
       <ul className="main-menu">
-        {this.state.isUserLoggedIn ? (
-          <li className="bttn bttn-icon bttn-info">
-            <a href="#/upload" title="Go to OAM Uploader">
-              <span>Upload</span>
-              <UploadIcon />
-            </a>
-          </li>
-        ) : (
-          <li className="bttn menu-signin-upload">
-            <a onClick={this.onLoginClick} title="Sign In">
-              <span>Sign In</span>
-            </a>
-          </li>
-        )}
-
-        <li className="menu-profile_pic">
-          {this.state.isUserLoggedIn ? (
-            <a href="#/account">
-              <div className="profile-pic-wrapper">
-                <img src={this.state.user.profile_pic_uri} alt="Profile" />
-              </div>
-            </a>
-          ) : null}
+        <li className="bttn menu-signin-upload">
+          <a onClick={this.onLoginClick} title="Envie suas imagens" target="_blank" rel="noopener noreferrer">
+            <span>Contribuir</span>
+          </a>
         </li>
         <li className="bttn menu-dropdown">
           <MenuIcon />
@@ -75,50 +53,31 @@ export default createReactClass({
             direction="down"
             alignment="right"
           >
-            {this.state.isUserLoggedIn ? (
-              <ul className="drop__menu info-menu" role="menu">
-                <li>
-                  <a
-                    href="#/account"
-                    className="drop__menu-item"
-                    data-hook="dropdown:close"
-                  >
-                    <span>My Account</span>{" "}
-                    <small>{this.state.user.name}</small>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="drop__menu-item"
-                    onClick={actions.userLogOut}
-                    data-hook="dropdown:close"
-                  >
-                    <span>Logout</span>
-                  </a>
-                </li>
-              </ul>
-            ) : null}
             <ul className="drop__menu info-menu" role="menu">
               <li>
                 <a
                   className="drop__menu-item"
                   href="http://openaerialmap.org/about"
-                  title="Learn more"
+                  title="Leia mais"
                   data-hook="dropdown:close"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span>About</span>
+                  <span>Sobre</span>
                 </a>
               </li>
               <li>
                 <a
                   className="drop__menu-item"
                   href="http://docs.openaerialmap.org/browser/getting-started/"
-                  title="Go to User Guide"
+                  title="Guia do usuário"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <span>Help</span>
+                  <span>Ajuda</span>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   className="drop__menu-item"
                   title="Leave feedback"
@@ -127,20 +86,15 @@ export default createReactClass({
                 >
                   <span>Feedback</span>
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   className="drop__menu-item"
-                  href="mailto:info@openaerialmap.org"
-                  title="Get in touch"
+                  href="mailto:lapig.cepf@gmail.com"
+                  title="Entrar em contato"
                 >
-                  <span>Contact</span> <small>info@openaerialmap.org</small>
+                  <span>Contato</span> <small>lapig.cepf@gmail.com</small>
                 </a>
-              </li>
-            </ul>
-            <ul className="drop__menu info-menu" role="menu">
-              <li>
-                <Status />
               </li>
             </ul>
           </Dropdown>

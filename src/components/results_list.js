@@ -17,12 +17,10 @@ export default class ResultsList extends React.Component {
   homeBlurb() {
     return (
       <div>
-        <p>
-          OpenAerialMap (OAM) is a set of tools for searching, sharing, and
-          using openly licensed satellite and unmanned aerial vehicle (UAV)
-          imagery.
+        <p className="title-plataforma-cepf">
+          Plataforma de conhecimento do Cerrado: Imagens Aéreas
         </p>
-        <h2>Latest uploads</h2>
+        <h2>Últimos uploads</h2>
       </div>
     );
   }
@@ -33,11 +31,11 @@ export default class ResultsList extends React.Component {
         <h2
           className="pane-title"
           title={
-            "Available imagery for square with quadKey " +
-            this.props.params.square
+            "Imagens disponíveis para quadrados" /* +
+            this.props.params.square */
           }
         >
-          {this.props.results.length} images within selected grid square
+          {this.props.results.length} imagens dentro do quadrado da grade selecionada
         </h2>
       </div>
     );
@@ -52,7 +50,7 @@ export default class ResultsList extends React.Component {
             <img src={user.profile_pic_uri} alt="Provider's profile" />
           </div>
           <div className="profile-details">
-            <h2 className="pane-title" title={"Imagery for user " + user.name}>
+            <h2 className="pane-title" title={"Imagens para o usuário " + user.name}>
               {user.name}
             </h2>
             <div>

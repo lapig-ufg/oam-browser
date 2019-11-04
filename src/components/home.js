@@ -5,7 +5,6 @@ import Reflux from "reflux";
 import _ from "lodash";
 
 import MapBoxMap from "components/map";
-import MiniMap from "components/minimap";
 import ResultsPane from "components/results_pane";
 import mapStore from "stores/map_store";
 import searchQueryStore from "stores/search_query_store";
@@ -13,7 +12,6 @@ import cookie from "utils/cookie";
 import utils from "utils/utils";
 import actions from "actions/actions";
 import config from "config";
-import Status from "components/oam-status";
 
 export default createReactClass({
   displayName: "Home",
@@ -140,39 +138,30 @@ export default createReactClass({
               selectedSquareQuadkey={this.state.selectedSquareQuadkey}
             />
           ) : (
-            "Loading imagery ..."
+            "Carregando imagem ..."
           )}
           <footer className="sidebar-footer">
             <div className="footer-nav">
               <ul>
                 <li className="footer-nav-contact">
-                  Contact:{" "}
-                  <a href="mailto:info@openaerialmap.org">
-                    info@openaerialmap.org
+                  Contato:{" "}
+                  <a href="mailto:lapig.cepf@gmail.com">
+                    lapig.cepf@gmail.com
                   </a>
                 </li>
                 <li>
-                  <a href="http://openaerialmap.org/about">About</a>
+                  <a href="http://openaerialmap.org/about" target="_blank" rel="noopener noreferrer">Sobre</a>
                 </li>
                 <li>
-                  <a href="https://docs.openaerialmap.org/browser/getting-started/">
-                    Help
+                  <a href="https://docs.openaerialmap.org/browser/getting-started/" target="_blank" rel="noopener noreferrer">
+                    Ajuda
                   </a>
                 </li>
                 <li className="footer-nav-terms">
-                  <a href="http://openaerialmap.org/legal">Terms</a>
-                </li>
-                <li className="footer-nav-status">
-                  <Status />
+                  <a href="http://openaerialmap.org/legal" target="_blank" rel="noopener noreferrer">Termos de uso</a>
                 </li>
               </ul>
             </div>
-            <a
-              className="bttn bttn-grey bttn-block"
-              onClick={() => actions.openModal("feedback")}
-            >
-              Feedback
-            </a>
             <div className="footer-bottom">
               <p>
                 Made with{" "}
@@ -194,8 +183,6 @@ export default createReactClass({
           selectedItem={selectedItem}
           filterParams={this.state.filterParams}
         />
-
-        <MiniMap params={this.props.params} />
       </div>
     );
   },

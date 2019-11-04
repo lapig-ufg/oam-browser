@@ -10,7 +10,7 @@ environment: "local",
         "pk.eyJ1Ijoib3BlbmFlcmlhbG1hcCIsImEiOiJjaXl4MjM5c20wMDBmMzNucnZtbnYwZTcxIn0.IKG5flWCS6QfpO3iOdRveg"
     },
 
-    initialZoom: 8,
+    initialZoom: 5,
     minZoom: 2,
     maxZoom: 18,
 

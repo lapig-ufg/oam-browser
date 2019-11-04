@@ -5,7 +5,6 @@ import Reflux from "reflux";
 
 import Notifications from "components/uploader/notifications";
 import MessageModal from "components/modals/message_modal";
-import FeedbackModal from "components/modals/feedback_modal";
 import LoginModal from "components/modals/login_modal";
 import Header from "components/header";
 import User from "utils/user";
@@ -110,7 +109,6 @@ export default createReactClass({
           {this.state.notification.message}
         </Notifications>
         <MessageModal />
-        <FeedbackModal />
         <LoginModal />
       </div>
     );

@@ -7,7 +7,7 @@ import Keys from "react-keybinding";
 import FacebookBoxIcon from "mdi-react/FacebookBoxIcon";
 import GoogleIcon from "mdi-react/GoogleIcon";
 
-import logo from "images/oam-logo-h-pos.svg";
+import logo from "images/lapiglogo-resize.png";
 import Modal from "oam-design-system/modal";
 import actions from "actions/actions";
 import userStore from "stores/user_store";
@@ -57,12 +57,12 @@ export default createReactClass({
         revealed={this.state.revealed}
       >
         <ModalHeader onCloseClick={this.closeModal}>
-          <img src={logo} alt="OpenAerialMap logo" />
+          <img src={logo} alt="Lapig - CEPF logo" />
         </ModalHeader>
         <ModalBody>
           <p className="modal__subtitle">
-            Sign in with your Facebook or Google identities. <br />
-            <small>We will never post anything on your behalf.</small>
+            Faça login com seu Facebook ou Google. <br />
+            <small>Nunca publicaremos nada em seu nome.</small>
           </p>
           <div className="oauth-logins">
             <a href={userStore.facebookLoginUri} className="facebook_login">

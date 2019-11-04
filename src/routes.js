@@ -3,9 +3,6 @@ import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 import App from "./components/app";
 import Home from "./components/home";
-import UserPage from "./components/user_page";
-import UserEditPage from "./components/user_edit_page";
-import ImageryEdit from "./components/imagery_edit";
 import UploaderForm from "./components/uploader/home";
 import UploaderStatus from "./components/uploader/status";
 
@@ -15,24 +12,6 @@ export default (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route
-        name="account"
-        path="/account"
-        component={UserPage}
-        onEnter={User.routeRequiresAuth.bind(User)}
-      />
-      <Route
-        name="account"
-        path="/account/edit"
-        component={UserEditPage}
-        onEnter={User.routeRequiresAuth.bind(User)}
-      />
-      <Route
-        name="imagery"
-        path="/imagery/:id/edit"
-        component={ImageryEdit}
-        onEnter={User.routeRequiresAuth.bind(User)}
-      />
       <Route
         name="upload"
         path="/upload"

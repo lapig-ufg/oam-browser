@@ -91,22 +91,22 @@ export default createReactClass({
     }
 
     var dates = [
-      { key: "all", title: "All" },
-      { key: "week", title: "Last week" },
-      { key: "month", title: "Last month" },
-      { key: "year", title: "Last year" }
+      { key: "all", title: "Todas" },
+      { key: "week", title: "Última semana" },
+      { key: "month", title: "Último mês" },
+      { key: "year", title: "Último ano" }
     ].map(filterItem.bind(this, "date", this.setDate));
 
     var resolutions = [
-      { key: "all", title: "All" },
-      { key: "low", title: "Low" },
-      { key: "medium", title: "Medium" },
-      { key: "high", title: "High" }
+      { key: "all", title: "Todas" },
+      { key: "low", title: "Baixa" },
+      { key: "medium", title: "Média" },
+      { key: "high", title: "Alta" }
     ].map(filterItem.bind(this, "resolution", this.setResolution));
 
     var dataTypes = [
-      { key: "all", title: "All Images" },
-      { key: "service", title: "Image + Map Layer" }
+      { key: "all", title: "Todas Imagens" },
+      { key: "service", title: "Imagem + Map Layer" }
     ].map(filterItem.bind(this, "dataType", this.setDataType));
 
     return (
@@ -118,15 +118,15 @@ export default createReactClass({
           direction="down"
           alignment="center"
         >
-          <h6 className="drop__title">Time</h6>
+          <h6 className="drop__title">Data</h6>
           <ul className="drop__menu drop__menu--select" role="menu">
             {dates}
           </ul>
-          <h6 className="drop__title">Resolution</h6>
+          <h6 className="drop__title">Resolução</h6>
           <ul className="drop__menu drop__menu--select" role="menu">
             {resolutions}
           </ul>
-          <h6 className="drop__title">Data Type</h6>
+          <h6 className="drop__title">Tipo de dado</h6>
           <ul className="drop__menu drop__menu--select" role="menu">
             {dataTypes}
           </ul>

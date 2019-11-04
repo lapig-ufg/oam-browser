@@ -53,12 +53,12 @@ export default createReactClass({
               <div className="site-headline">
                 <h1 className="site-title">
                   <img
-                    src="assets/graphics/layout/oam-logo-h-pos.svg"
+                    src="../images/lapiglogo-resize.png"
                     width="167"
                     height="32"
-                    alt="OpenAerialMap logo"
+                    alt="Lapig - CEPF logo"
                   />
-                  <span>OpenAerialMap</span>
+                  <span>Plataforma de Conhecimento do Cerrado</span>
                   <small>Uploader</small>
                 </h1>
               </div>

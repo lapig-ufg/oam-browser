@@ -7,7 +7,7 @@ import mapStore from "stores/map_store";
 import ResultsList from "components/results_list";
 import ResultsItem from "components/results_item";
 
-import logo from "images/oam-logo-h-pos.svg";
+import logo from "images/lapiglogo-resize.png";
 
 export default createReactClass({
   displayName: "ResultsPane",
@@ -89,7 +89,7 @@ export default createReactClass({
     return (
       <div id="results-pane" className="pane">
         <a className="main-logo main-logo-map" href="#/" title="Home">
-          <img src={logo} alt="OpenAerialMap logo" />
+          <img src={logo} alt="Lapig - CEPF logo" />
         </a>
         {resultsPane}
       </div>

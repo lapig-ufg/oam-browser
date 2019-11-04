@@ -184,12 +184,12 @@ export default createReactClass({
   renderTmsOptions: function() {
     return (
       <span>
-        <ContentCopyIcon /> Copy image URL
+        <ContentCopyIcon /> Copiar URL da imagem
         <div className="actions">
           {this.props.data.properties.tms ? (
             <ZcButton
               onCopy={() => this.props.data.properties.tms}
-              title="Copy TMS url"
+              title="Copiar url TMS"
               text="TMS"
             />
           ) : null}{" "}
@@ -197,7 +197,7 @@ export default createReactClass({
           {this.props.data.properties.wmts ? (
             <ZcButton
               onCopy={() => this.props.data.properties.wmts}
-              title="Copy WMTS url"
+              title="Copiar url WMTS"
               text="WMTS"
             />
           ) : null}
@@ -221,15 +221,15 @@ export default createReactClass({
       });
     return (
       <span>
-        <OpenInNewIcon /> Open in
+        <OpenInNewIcon /> Abrir em
         <div className="actions">
-          <a href={idUrl} target="_blank" title="Open with iD editor">
+          <a href={idUrl} target="_blank" title="Abrir com o editor iD">
             iD editor
           </a>{" "}
           |{" "}
           <a
             onClick={() => this.onOpenJosm(this.props.data.properties.tms)}
-            title="Open with JOSM"
+            title="Abrir com JOSM"
           >
             JOSM
           </a>
@@ -244,7 +244,7 @@ export default createReactClass({
         triggerElement="a"
         triggerClassName="pane-more"
         triggerActiveClassName="button--active"
-        triggerTitle="Share imagery or report a problem"
+        triggerTitle="Compartilhe a imagem"
         triggerText=""
         direction="down"
         alignment="right"
@@ -257,10 +257,10 @@ export default createReactClass({
                 window.location.href
               )}`}
               target="_blank"
-              title="Share on twitter"
+              title="Compartilhar no twitter"
               data-hook="dropdown:close"
             >
-              <span>Share on Twitter</span>
+              <span>Compartilhar no Twitter</span>
             </a>
           </li>
 
@@ -271,23 +271,10 @@ export default createReactClass({
                 window.location.href
               )}`}
               target="_blank"
-              title="Share on Facebook"
+              title="Compartilhar no Facebook"
               data-hook="dropdown:close"
             >
-              <span>Share on Facebook</span>
-            </a>
-          </li>
-        </ul>
-
-        <ul className="drop__menu info-menu" role="menu">
-          <li>
-            <a
-              className="drop__menu-item"
-              title="Report a problem"
-              data-hook="dropdown:close"
-              onClick={this.feedbackClickHandler}
-            >
-              <span>Report a problem</span>
+              <span>Compartilhar no Facebook</span>
             </a>
           </li>
         </ul>
@@ -299,7 +286,7 @@ export default createReactClass({
     return (
       <div className="pane-menu">
         <a
-          title="Download raw .tiff image file"
+          title="Faça o download do arquivo de imagem .tiff bruto"
           className="button-download"
           target="_blank"
           href={this.props.data.uuid}
@@ -309,7 +296,7 @@ export default createReactClass({
         <a
           onClick={this.zoomToFit}
           className="pane-zoom-to-fit"
-          title="Zoom to fit imagery on screen"
+          title="Zoom para ajustar as imagens na tela"
         >
           <ImageFilterCenterFocusIcon />
         </a>
@@ -317,7 +304,7 @@ export default createReactClass({
         <a
           onClick={this.closeResults}
           className="pane-dismiss"
-          title="Exit selection"
+          title="Sair da Seleção"
         >
           <CloseIcon />
         </a>
@@ -350,7 +337,7 @@ export default createReactClass({
     let sp = this.state.selectedPreview;
     return (
       <div className="preview-options">
-        <ImageFilterIcon /> Display as
+        <ImageFilterIcon /> Mostrar como
         <div className="actions">
           {this.props.data.properties.tms ? (
             <button
@@ -443,21 +430,21 @@ export default createReactClass({
             </div>
             <dl className="single-details">
               <dt>
-                <span>Date</span>
+                <span>Data</span>
               </dt>
               <dd>
                 {d.acquisition_start ? d.acquisition_start.slice(0, 10) : "N/A"}
               </dd>
               <dt>
-                <span>Resolution</span>
+                <span>Resolução</span>
               </dt>
               <dd>{utils.gsdToUnit(d.gsd)}</dd>
               <dt>
-                <span>Provider</span>
+                <span>Provedor</span>
               </dt>
               <dd>{d.provider}</dd>
               <dt>
-                <span>Platform</span>
+                <span>Plataforma</span>
               </dt>
               <dd className="cap">
                 {d.platform === "uav" ? d.platform.toUpperCase() : d.platform}
@@ -469,11 +456,11 @@ export default createReactClass({
                 {d.properties.sensor ? d.properties.sensor : "not available"}
               </dd>
               <dt>
-                <span>Image Size</span>
+                <span>Tamanho da Imagem</span>
               </dt>
               <dd className="cap">{prettyBytes(d.file_size)}</dd>
               <dt>
-                <span>Type</span>
+                <span>Tipo</span>
               </dt>
               <dd>{d.properties.tms ? "Image + Map Layer" : "Image"}</dd>
             </dl>
@@ -504,20 +491,20 @@ export default createReactClass({
             <a
               onClick={this.prevResult}
               className={this.props.pagination.prevId ? "previous" : "disabled"}
-              title="View previous result"
+              title="Visualizar resultado anterior"
             >
               <ChevronLeftIcon />
-              Previous
+              Anterior
             </a>
             <span className="pane-subtitle">
-              {pagination.current} of {pagination.total} results
+              {pagination.current} de {pagination.total} resultados
             </span>
             <a
               onClick={this.nextResult}
               className={this.props.pagination.nextId ? "next" : "disabled"}
-              title="View next result"
+              title="Visualizar próximo resultado"
             >
-              Next
+              Próxima
               <ChevronRightIcon />
             </a>
           </div>
