@@ -41,7 +41,7 @@ export default createReactClass({
       <ul className="main-menu">
         <li className="bttn menu-signin-upload">
           <a onClick={this.onLoginClick} title="Envie suas imagens" target="_blank" rel="noopener noreferrer">
-            <span>Contribuir</span>
+            <span>Open Aerial Map</span>
           </a>
         </li>
         <li className="bttn menu-dropdown">
